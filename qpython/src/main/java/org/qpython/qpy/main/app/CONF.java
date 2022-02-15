@@ -23,14 +23,11 @@ public class CONF implements QPyConstants {
 
     public static final String filesDir = App.getContext().getFilesDir().getAbsolutePath();
 
-    public static String qpypiPath() {
-        return filesDir +
-                "/lib/"+pyVer/*python"+(NAction.isQPy3(App.getContext())?QPyConstants.py3Ver:"2.7")*/+"/site-packages/";
-    }
-
-    public static final String pytho = filesDir + "/bin/python";
-    public static final String qpysh = filesDir + "/bin/qpython.sh";
-    public static final String qpyshr = filesDir + "/bin/qpython-root.sh";
-    public static final String qpyccs = filesDir + "/bin/colorConsole.py";
+    public static final String binDir = filesDir + "/bin/";
+    public static final String pytho = binDir + "python";
+    public static final String qpysh = binDir + "qpython.sh";
+    public static final String qpyshr = binDir + "qpython-root.sh";
+    public static final String qpyccs = binDir + "colorConsole.py";
+    public static final String qpypiPath = filesDir + "/lib/"+pyVer+"/site-packages/";
 
 }

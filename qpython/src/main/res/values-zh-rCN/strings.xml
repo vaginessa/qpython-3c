@@ -430,7 +430,7 @@
     <string name="install_kivy_first">请先从QPYPI中安装kivy库</string>
     <string name="get_help">获得帮助</string>
     <string name="ip_address">我的IP地址</string>
-    <string name="ip_address_need_wifi">请连接你的wifi</string>
+    <string name="ip_address_need_wifi_or_ap">请连接你的WiFi或开启WiFi热点</string>
     <string name="summary_actionbar_preference">选择操作</string>
     <string name="choose_action">选择操作</string>
     <string name="create_shortcut">创建桌面快捷方式</string>
@@ -449,7 +449,7 @@
     <string name="welcome">欢迎使用QPython 3C，享受您的手机编程之旅吧。</string>
     <string name="notice">提示</string>
     <string name="python_interpreter">黑白Python解释器</string>
-    <string name="shell_terminal">Shell 终端</string>
+    <string name="shell_terminal">传统 Shell 终端</string>
     <string name="package_name_title">软件包名</string>
     <string name="bili_web_tip">教程/下载/检查更新：</string>
     <string name="fork_from_title">来源自</string>
@@ -514,4 +514,5 @@
     <string name="color_python_interpreter">彩色Python解释器</string>
     <string name="tradition_bug">传统终端bug太多，建议仅用于测试。</string>
     <string name="open_source_library_bili">开源库 (B站)</string>
+    <string name="python_shell_terminal">Python 彩色 Shell 终端</string>
 </resources>

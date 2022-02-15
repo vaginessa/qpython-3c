@@ -5,24 +5,23 @@
 
 Welcome to the QPython project!
 
-QPython is the Python engine for android. It contains some amazing features such as Python interpreter, runtime environment, editor and QPYPI and integrated SL4A. It makes it easy for you to use Python on Android. And it's FREE.
+QPython is the Python engine for android. It contains some amazing features such as Python interpreter, runtime environment, editor and QPYI and integrated SL4A. It makes it easy for you to use Python on Android. And it's FREE.
 
 Compared with other Python apps, QPython mainly solves how to use Python to drive your Android device work. Good SL4A support is our main goal, such as android's camera, sensor, sms media APIs etc.
 
 QPython already has millions of users worldwide and it is also an open source project.
 
-For different usage scenarios, QPython has three branches, namely QPython Ox , 3x and 3C .
+For different usage scenarios, QPython has two branches, namely QPython Ox and 3x.
 
 QPython Ox is mainly aimed at programming learners, and it provides more friendly features for beginners.
 QPython 3x is mainly for experienced Python users, and it provides some advanced technical features.
-QPython 3C is mainly aimed at Android 7.0 to 12.0, and it provides a lot of advanced technical features .
 
 ## Quick start
 
-This repository is the QPython 3C project repository, you can follow the below steps to run it.
+This repository is the QPython Ox project repository, you can follow the below steps to run it.
 
 - Macos + Android studio, (Ubuntu may work too)
-- git clone https://github.com/buddygr/qpython-3c.git
+- git clone git@github.com:qpython-android/qpython.git
 - git submodule init
 - git submodule sync
 - git submodule update
@@ -60,11 +59,8 @@ Please tell us your phone's informatioin, android os information, QPython branch
 
 ## Donation
 
-### Original Version
 - harford (Wechat)
 - 晨晖 (Wechat)
-- ### Edited (3C) Version
-- 乘着船 (Bilibili)
 
 THANK YOU VERY MUCH FOR DONATION!
 

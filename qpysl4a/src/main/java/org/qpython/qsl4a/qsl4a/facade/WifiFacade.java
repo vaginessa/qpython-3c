@@ -27,8 +27,14 @@ import org.qpython.qsl4a.qsl4a.rpc.RpcParameter;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -197,6 +203,36 @@ public class WifiFacade extends RpcReceiver {
       map.put("dns2", info.dns2);
     }
     map.put("leaseDuration", info.leaseDuration);
+    return map;
+  }
+
+  @Rpc(description = "get Internet Interface Address")
+  public Map getInternetInterfaceAddress() throws SocketException {
+    Map map = new HashMap();
+    for (NetworkInterface intf : Collections.list(NetworkInterface.getNetworkInterfaces())) {
+        JSONArray array = new JSONArray();
+      for (InetAddress addr : Collections.list(intf.getInetAddresses())) {
+          if (!addr.isLoopbackAddress()){
+            //map.put("addresses"+n, Arrays.toString(addr.getAddress()));
+            //map.put("hostAddress",addr.getHostAddress());
+            //map.put("hostName"+n,addr.getHostName());
+            //map.put("canonicalHostName"+n,addr.getCanonicalHostName());
+            //map.put("interface"+n,intf.toString());
+            //map.put("interfaceName",intf.getName());
+            //map.put("interfaceUp"+n,intf.isUp());
+            array.put(addr.getHostAddress());
+          }
+      }
+        if (array.length()>0)
+          map.put(intf.getName(),array);
+    }
+    /*WifiInfo info = mWifi.getConnectionInfo();
+    int ip = info.getIpAddress();
+    if (ipConvertToString) {
+      return intToIp(ip);
+    } else {
+      return String.valueOf(ip);
+    }*/
     return map;
   }
 

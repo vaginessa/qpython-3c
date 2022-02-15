@@ -130,7 +130,7 @@ public class ScriptExec {
         String[] env = new String[24];
 
         env[0] = "TERM=" + term;
-        env[1] = "PATH=" + context.getFilesDir()+"/bin"+":"+path;
+        env[1] = "PATH=" + CONF.filesDir+"/bin"+":"+path;
 
         /*if (!isQPy3) {
             File py27so = new File(filesDir+"/lib/libpython2.7.so.1.0");
@@ -339,9 +339,7 @@ public class ScriptExec {
         } else {
             args = new String[]{scriptPath, scriptPath, arg};
         }
-
         execPyInConsole((Activity)context, args);
-
     }
 
     /*

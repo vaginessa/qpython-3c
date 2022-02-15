@@ -659,9 +659,9 @@
     <string name="python_interpreter">BlackWhite Python Interpreter</string>
     <string name="action_notebook">Notebook</string>
 
-    <string name="shell_terminal">Shell Terminal</string>
+    <string name="shell_terminal">Traditional Shell Terminal</string>
     <string name="ip_address">My IP Adress</string>
-    <string name="ip_address_need_wifi">Please connect your wifi</string>
+    <string name="ip_address_need_wifi_or_ap">Please connect your WiFi or turn on WiFi hotspot</string>
     <string name="editor_override">Do you want to override?</string>
     <string name="welcome">Welcome to use QPython 3C , enjoy your mobile phone programming journey now .</string>
     <string name="notice">Notice</string>
@@ -724,5 +724,6 @@
     <string name="sl4a_gui_console">Python SL4A GUI Console</string>
     <string name="color_python_interpreter">Color Python Interpreter</string>
     <string name="tradition_bug">There are too many bugs in the traditional terminal. It is recommended to use it only for testing.</string>
+    <string name="python_shell_terminal">Python Color Shell Terminal</string>
 
 </resources>

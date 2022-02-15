@@ -113,7 +113,9 @@ public class HomeMainActivity extends BaseActivity {
             pyVer = qpysdk.getPyVer();
             CONF.pyVerComplete = pyVer[1];
             CONF.pyVer = pyVer[0];
-            if (!once) runShortcut(getIntent());
+            //可以消除终端中文输入的某些bug，虽然不知道为什么
+            if (once) startShell("init.sh");
+            else runShortcut(getIntent());
         }
         catch (Exception e){
             if (once) initQPy();
@@ -136,10 +138,13 @@ public class HomeMainActivity extends BaseActivity {
         runShortcut(intent);
     }
 
+    private void startShell(String name){
+        TermActivity.startShell(this,name);
+    }
+
     private void playPy(String name){
-        final String bin = getFilesDir().getAbsolutePath()+"/bin/";
         ScriptExec.getInstance().playScript(HomeMainActivity.this,
-                bin+name+".py", null, false);
+                CONF.binDir+name+".py", null, false);
     }
 
     private void initListener() {
@@ -172,17 +177,18 @@ public class HomeMainActivity extends BaseActivity {
                     this.getString(R.string.sl4a_gui_console),
                     this.getString(R.string.browser_console),
                     this.getString(R.string.shell_terminal),
-                    this.getString(R.string.python_interpreter)
+                    this.getString(R.string.python_interpreter),
+                    this.getString(R.string.python_shell_terminal),
             };
             new AlertDialog.Builder(this, R.style.MyDialog)
                     .setTitle(R.string.choose_action)
                     .setItems(chars, (dialog, which) -> {
                         switch (which) {
                             case 0:
-                                playPy("colorConsole");
+                                startShell("1");
                                 break;
                             case 1:
-                                playPy("ipython");
+                                startShell("ipython.py");
                                 break;
                             case 2:
                                 playPy("SL4A_GUI_Console");
@@ -191,10 +197,14 @@ public class HomeMainActivity extends BaseActivity {
                                 playPy("browserConsole");
                                 break;
                             case 4:
-                                TermActivity.startShell(HomeMainActivity.this,"shell");
+                                startShell("shell.sh");
                                 break;
                             case 5:
-                                playPy("blackConsole");
+                                startShell("blackConsole.py");
+                                break;
+                            case 6:
+                                startShell("shell.py");
+                                break;
                         }
                     }).setNegativeButton(getString(R.string.close), (dialogInterface, i) -> dialogInterface.dismiss())
                     .show();

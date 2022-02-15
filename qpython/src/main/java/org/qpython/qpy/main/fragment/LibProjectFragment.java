@@ -259,7 +259,7 @@ public class LibProjectFragment extends RefreshFragment {
                         if (item.getSrc().equals("")) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                             AlertDialog alertDialog = builder.setTitle(R.string.location)
-                                    .setMessage(CONF.qpypiPath() + "/" + item.getTitle())
+                                    .setMessage(CONF.qpypiPath + "/" + item.getTitle())
                                     .setPositiveButton(R.string.confirm, null)
                                     .create();
                             alertDialog.show();
@@ -291,7 +291,7 @@ public class LibProjectFragment extends RefreshFragment {
                         if (item.getSrc().equals("")) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                             AlertDialog alertDialog = builder.setTitle(R.string.location)
-                                    .setMessage(CONF.qpypiPath() + "/" + item.getTitle())
+                                    .setMessage(CONF.qpypiPath + "/" + item.getTitle())
                                     .setPositiveButton(R.string.confirm, null)
                                     .create();
                             alertDialog.show();

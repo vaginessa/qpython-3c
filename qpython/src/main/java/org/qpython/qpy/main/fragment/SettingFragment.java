@@ -85,7 +85,7 @@ public class SettingFragment extends PreferenceFragment {
             } else if (intent.getAction().equals(FTPServerService.ACTION_FAILEDTOSTART)) {
                 running_state.setChecked(false);
                 running_state.setSummary(org.swiftp.R.string.running_summary_failed);
-                Toast.makeText(getActivity(),R.string.ip_address_need_wifi,Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),R.string.ip_address_need_wifi_or_ap,Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -132,7 +132,7 @@ public class SettingFragment extends PreferenceFragment {
         Preference ipaddress = findPreference("ipaddress");
         InetAddress ip;
         try {
-            ip = FTPServerService.getWifiIp();
+            ip = FTPServerService.getWifiAndApIp();
         } catch (NullPointerException e) {
             ip = null;
 
@@ -140,7 +140,7 @@ public class SettingFragment extends PreferenceFragment {
         if (ip!=null) {
             ipaddress.setSummary(ip.getHostAddress());
         } else {
-            ipaddress.setSummary(R.string.ip_address_need_wifi);
+            ipaddress.setSummary(R.string.ip_address_need_wifi_or_ap);
         }
         lastlog = (Preference) findPreference("lastlog");
         //py_inter = (PreferenceScreen) findPreference(getString(R.string.key_py_inter));
@@ -221,11 +221,11 @@ public class SettingFragment extends PreferenceFragment {
     }
 
     private void setFtpAddress() {
-        InetAddress address = FTPServerService.getWifiIp();
+        InetAddress address = FTPServerService.getWifiAndApIp();
         if (address == null) {
             Log.v(TAG, "Unable to retreive wifi ip address");
             running_state.setSummary(org.swiftp.R.string.cant_get_url);
-            Toast.makeText(getActivity(),R.string.ip_address_need_wifi,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),R.string.ip_address_need_wifi_or_ap,Toast.LENGTH_LONG).show();
         } else {
             String iptext = "ftp://" + address.getHostAddress() + ":"
                     + FTPServerService.getPort() + "/";

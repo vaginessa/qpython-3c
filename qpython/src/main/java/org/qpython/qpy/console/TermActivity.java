@@ -107,6 +107,7 @@ public class TermActivity extends AppCompatActivity implements UpdateCallback, S
     public static final  int    REQUEST_CHOOSE_WINDOW             = 1;
     public static final  String EXTRA_WINDOW_ID                   = "jackpal.androidterm.window_id";
     public static final  String ARGS                              = "PYTHONARGS";
+    public static final  String TYPE                              = "shell_type";
     /**
      * The name of the ViewFlipper in the resources.
      */
@@ -259,7 +260,7 @@ public class TermActivity extends AppCompatActivity implements UpdateCallback, S
 
     public static void startShell(Context context,String shell_type) {
         Intent intent = new Intent(context, TermActivity.class);
-        intent.putExtra("shell_type",shell_type);
+        intent.putExtra(TYPE,shell_type);
         context.startActivity(intent);
     }
 
@@ -486,17 +487,13 @@ public class TermActivity extends AppCompatActivity implements UpdateCallback, S
         Log.d("TermActivity", "populateViewFlipper");
         if (mTermService != null) {
             mTermSessions = mTermService.getSessions();
-            String[] mArgs = this.getIntent().getStringArrayExtra(ARGS);
-            if (mArgs != null) {
+            Intent intent = this.getIntent();
+            String[] mArgs = intent.getStringArrayExtra(ARGS);
+            String shell_type = intent.getStringExtra(TYPE);
+            if (mArgs != null || shell_type != null) {
                 mTermSessions.add(createPyTermSession(mArgs));
-            } else {
-                mArgs = this.getIntent().getStringArrayExtra("ARGS");
-                if (mArgs != null) {
-                    mTermSessions.add(createPyTermSession(mArgs));
-
-                } else if (mTermSessions.size() == 0) {
+            } else if (mTermSessions.size() == 0) {
                     mTermSessions.add(createPyTermSession(null));
-                }
             }
             //存在内存泄漏
             mTermSessions.addCallback(this);
@@ -1163,28 +1160,18 @@ public class TermActivity extends AppCompatActivity implements UpdateCallback, S
         TermSettings settings = mSettings;
         TermSession session = null;
         Intent intent = this.getIntent();
-        String shell_type = intent.getStringExtra("shell_type");
+        String shell_type = intent.getStringExtra(TYPE);
         if (shell_type==null) {
             if (mArgs!=null) shell_type = "";
-            else shell_type = "color";
+            else shell_type = "1";
         }
-        switch (shell_type) {
-            case "color":
-                mArgs = new String[]{CONF.qpyccs, CONF.qpyccs};
-                break;
-            case "shell":
-                session = createTermSession(this, settings, "cd $HOME && cat text/" + getString(R.string.lang_flag) + "/shell", this.getFilesDir().getAbsolutePath());
-                break;
-            case "black":
-                shell_type = CONF.filesDir+"/bin/blackConsole.py";
-                mArgs = new String[]{shell_type,shell_type};
-                break;
-                /*case "tradition":
-                String scmd = getScmd() + " && exit";
-                session = createTermSession(this, settings, scmd, "");
-                Toast.makeText(this,getString(R.string.tradition_bug),Toast.LENGTH_LONG).show();
-                break;*/
-        }
+        if (shell_type.equals("1"))
+            mArgs = new String[]{CONF.qpyccs, CONF.qpyccs};
+        else if (shell_type.endsWith(".py")) {
+            shell_type = CONF.binDir + shell_type;
+            mArgs = new String[]{shell_type, shell_type};
+        } else
+            session = createTermSession(this, settings, CONF.binDir + shell_type + " && exit", CONF.filesDir);
         if (mArgs != null) {
             //String content = FileHelper.getFileContents(mArgs[0]);
             //String cmd = settings.getInitialCommand().equals("")?scmd:settings.getInitialCommand();

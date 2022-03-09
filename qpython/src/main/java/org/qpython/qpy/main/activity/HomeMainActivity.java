@@ -185,7 +185,7 @@ public class HomeMainActivity extends BaseActivity {
                     .setItems(chars, (dialog, which) -> {
                         switch (which) {
                             case 0:
-                                startShell("color");
+                                startShell("1");
                                 break;
                             case 1:
                                 startShell("ipython.py");
@@ -197,10 +197,10 @@ public class HomeMainActivity extends BaseActivity {
                                 playPy("browserConsole");
                                 break;
                             case 4:
-                                startShell("shell");
+                                startShell("shell.sh");
                                 break;
                             case 5:
-                                startShell("qpython.sh");
+                                startShell("blackConsole.py");
                                 break;
                             case 6:
                                 startShell("shell.py");

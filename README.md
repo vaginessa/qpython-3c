@@ -36,6 +36,9 @@ This repository is the QPython 3C project repository, you can follow the below s
 
 - [QPython 3x features](https://github.com/qpython-android/qpython.org/blob/master/qpython-docs/source/en/qpython_3x_featues.rst), [QPython Ox features](https://github.com/qpython-android/qpython.org/blob/master/qpython-docs/source/en/qpython_ox_featues.rst)
 - [QPySL4A APIs](https://github.com/qpython-android/qpysl4a/blob/master/doc/en/APIs.rst) and [test scripts](https://github.com/qpython-android/qpysl4a/issues/1)
+- [new SL4A Functions 拍照录音录像、截屏录屏、外置卡读写](https://www.bilibili.com/read/cv13418026)
+- [new SL4A Functions 电话、悬浮窗、网页等](https://www.bilibili.com/read/cv11197543)
+- [new SL4A Functions Javax.Crypto.Cipher 加解密](https://www.bilibili.com/read/cv11108237)
 - QPYPI Packages
 
 ## How to ask QPython related questions

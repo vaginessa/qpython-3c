@@ -1,11 +1,12 @@
 # About
 
 
-<p align="center"><a href="https://play.google.com/store/apps/details?id=org.qpython.qpy" target="_blank"><img src="https://lh3.googleusercontent.com/E2sU2Mca-geyscWogW2ZsQC3dY1Y46a3HU35NoHv0AIBvCgQn_ZRZ2MOeA5tg3YkWg=s360-rw"></a></p>
+<p align="center"><a href="https://github.com/buddygr/qpython-3c/blob/master/qpython/src/main/res/drawable-xxhdpi/ic_launcher.png" target="_blank"><img src="https://github.com/buddygr/qpython-3c/blob/master/qpython/src/main/res/drawable-xxhdpi/ic_launcher.png?raw=true"></a></p>
 
 Welcome to the QPython project!
 
 QPython is the Python engine for android. It contains some amazing features such as Python interpreter, runtime environment, editor and QPYPI and integrated SL4A. It makes it easy for you to use Python on Android. And it's FREE.
+
 
 Compared with other Python apps, QPython mainly solves how to use Python to drive your Android device work. Good SL4A support is our main goal, such as android's camera, sensor, sms, media, storage, crypto, GUI APIs etc.
 
@@ -13,23 +14,23 @@ QPython already has millions of users worldwide and it is also an open source pr
 
 For different usage scenarios, QPython has three branches, namely QPython Ox , 3x and 3C .
 
-QPython Ox is mainly aimed at programming learners, and it provides more friendly features for beginners.
-QPython 3x is mainly for experienced Python users, and it provides some advanced technical features.
-QPython 3C is mainly aimed at Android 7.0 to 12.0, and it provides a lot of advanced technical features .
+QPython Ox is mainly aimed at programming learners, and it provides more friendly features for beginners.  
+QPython 3x is mainly for experienced Python users, and it provides some advanced technical features.  
+QPython 3C is forked from QPython OP (one branch of QPython Ox) . QPython 3C is mainly aimed at Android 7.0 to 12.0 with 64bit, and it provides a lot of advanced technical features .
 
 ## Quick start
 
 This repository is the QPython 3C project repository, you can follow the below steps to run it.
 
 - Macos + Android studio, (Ubuntu may work too)
-- git clone https://github.com/buddygr/qpython-3c.git
+- git clone https://github.com/buddygr/qpython-3c
 - git submodule init
 - git submodule sync
 - git submodule update
 - build it...
 
 ### Learn
-- Get more information from [wiki](https://github.com/qpython-android/qpython/wiki) for developing QPython .
+- Get more information from [wiki](https://github.com/qpython-android/qpython/wiki) for developing QPython OP .
 - Get more information from [开源库](https://www.bilibili.com/read/readlist/rl321663) for developing QPython 3C .
 
 ## Related 

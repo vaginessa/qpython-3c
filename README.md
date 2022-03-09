@@ -28,8 +28,9 @@ This repository is the QPython 3C project repository, you can follow the below s
 - git submodule update
 - build it...
 
-Get more information from [wiki](https://github.com/qpython-android/qpython/wiki) for developing QPython
-Get more information from [wiki](https://www.bilibili.com/read/readlist/rl321663) for developing QPython 3C
+### Learn
+- Get more information from [wiki](https://github.com/qpython-android/qpython/wiki) for developing QPython .
+- Get more information from [开源库](https://www.bilibili.com/read/readlist/rl321663) for developing QPython 3C .
 
 ## Related 
 

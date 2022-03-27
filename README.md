@@ -23,7 +23,7 @@ QPython 3C is forked from QPython OP (one branch of QPython Ox) . QPython 3C is 
 This repository is the QPython 3C project repository, you can follow the below steps to run it.
 
 - Macos + Android studio, (Ubuntu may work too)
-- git clone https://github.com/buddygr/qpython-3c
+- git clone https://gitee.com/buddygr/qpython-3c
 - git submodule init
 - git submodule sync
 - git submodule update
@@ -42,7 +42,7 @@ This repository is the QPython 3C project repository, you can follow the below s
 - [new SL4A Functions 电话、悬浮窗、网页等](https://www.bilibili.com/read/cv11197543)
 - [new SL4A Functions Javax.Crypto.Cipher 加解密](https://www.bilibili.com/read/cv11108237)
 - new SL4A Functions [Open File](https://www.bilibili.com/read/cv11037013) and [Video Play](https://www.bilibili.com/read/cv10618059)
-- QPYPI Packages
+- 图形界面：[音乐播放器、文件选择器、列表选择器](https://www.bilibili.com/BV1Pz4y1C7ds)、[长文本框](https://www.bilibili.com/BV1d7411R7ic)
 
 ## How to ask QPython related questions
 In order to benefit those guys who have the same issue with QPython, we suggest that you should ask the issue which is related with QPython within public techical communities.
